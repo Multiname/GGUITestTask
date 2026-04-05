@@ -1,6 +1,7 @@
 using MVP.Models;
 using MVP.Presenters;
 using MVP.Views.Content;
+using MVP.Views.Content.Achievements;
 using MVP.Views.Content.Matches;
 using MVP.Views.Content.Stats;
 using MVP.Views.ContentToggle;
@@ -22,6 +23,7 @@ namespace Services
         
         [SerializeField] private MatchLayoutView matchLayoutView;
         [SerializeField] private StatsLayoutView statsLayoutView;
+        [SerializeField] private AchievementsLayoutView achievementsLayoutView;
         
         // Services
         [SerializeField] private FontService fontService;
@@ -29,21 +31,27 @@ namespace Services
         // Prefabs
         [SerializeField] private MatchView matchViewPrefab;
         [SerializeField] private StatView statViewPrefab;
+        [SerializeField] private AchievementView achievementViewPrefab;
+        [SerializeField] private AchievementsRowView achievementsRowViewPrefab;
         
         public override void InstallBindings()
         {
             // Services
             Container.Bind<AvatarService>().AsSingle();
             Container.Bind<FontService>().FromInstance(fontService).AsSingle();
+            Container.Bind<AchievementIconService>().AsSingle();
             
             // Prefabs
-            Container.Bind<MatchView>().FromInstance(matchViewPrefab).AsTransient();
-            Container.Bind<StatView>().FromInstance(statViewPrefab).AsTransient();
+            Container.BindFactory<MatchView, MatchView.Factory>().FromComponentInNewPrefab(matchViewPrefab);
+            Container.BindFactory<StatView, StatView.Factory>().FromComponentInNewPrefab(statViewPrefab);
+            Container.BindFactory<AchievementView, AchievementView.Factory>().FromComponentInNewPrefab(achievementViewPrefab);
+            Container.BindFactory<AchievementsRowView, AchievementsRowView.Factory>().FromComponentInNewPrefab(achievementsRowViewPrefab);
             
             // Models
             Container.Bind<ProfileModel>().AsSingle();
             Container.Bind<MatchHistoryModel>().AsSingle();
             Container.Bind<StatsModel>().AsSingle();
+            Container.Bind<AchievementsModel>().AsSingle();
             
             // Views
             Container.Bind<PlayerAvatarView>().FromInstance(playerAvatarView).AsSingle();
@@ -55,12 +63,14 @@ namespace Services
             
             Container.Bind<MatchLayoutView>().FromInstance(matchLayoutView).AsSingle();
             Container.Bind<StatsLayoutView>().FromInstance(statsLayoutView).AsSingle();
+            Container.Bind<AchievementsLayoutView>().FromInstance(achievementsLayoutView).AsSingle();
             
             // Presenters
             Container.BindInterfacesAndSelfTo<ProfilePresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<ContentPresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<MatchHistoryPresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<StatsPresenter>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AchievementsPresenter>().AsSingle();
         }
     }
 }

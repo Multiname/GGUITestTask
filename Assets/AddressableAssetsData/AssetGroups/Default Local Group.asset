@@ -20,6 +20,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f1fc52b72d9cee4aaaf5e6e77d98829
+    m_Address: achievement_icon_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2851274e4d02e0479f730c90142cffd
+    m_Address: achievement_icon_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff9f1ee8048051f41ae8441fb9eeea4c
+    m_Address: achievement_icon_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 01b7456b14de077409a76f22a8ed2e35, type: 2}
   m_SchemaSet:

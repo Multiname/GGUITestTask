@@ -7,7 +7,7 @@ namespace MVP.Views.Content.Stats
 {
     public class StatsLayoutView : MonoBehaviour
     {
-        [Inject] private StatView _statViewPrefab;
+        [Inject] private StatView.Factory _statViewFactory;
         
         private readonly List<StatView>  _statViews = new();
 
@@ -17,7 +17,8 @@ namespace MVP.Views.Content.Stats
             
             foreach (var stat in stats)
             {
-                var statView = Instantiate(_statViewPrefab, transform);
+                var statView = _statViewFactory.Create();
+                statView.transform.SetParent(transform);
                 statView.SetHeader(stat.Header);
                 statView.SetSubheader(stat.Subheader);
                 statView.SetPoints(stat.Points);

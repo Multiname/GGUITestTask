@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace MVP.Views.Content.Stats
 {
@@ -24,5 +25,7 @@ namespace MVP.Views.Content.Stats
         public void SetHeader(string text) =>  header.text = text.ToUpper();
         public void SetSubheader(string text) =>  subheader.text = text.ToUpper();
         public void SetPoints(int number) => points.text = number.ToString("N", _pointsFormat) + " PT.";
+        
+        public class Factory : PlaceholderFactory<StatView> {}
     }
 }

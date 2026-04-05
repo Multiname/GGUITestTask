@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace MVP.Views.Content.Matches
 {
@@ -11,5 +12,7 @@ namespace MVP.Views.Content.Matches
         public void SetHeader(string text) =>  header.text = text.ToUpper();
         
         public void SetDetails(string text) =>  details.text = text.ToUpper();
+        
+        public class Factory : PlaceholderFactory<MatchView> {}
     }
 }

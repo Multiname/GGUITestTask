@@ -9,7 +9,7 @@ namespace MVP.Views.Content.Matches
     {
         public const int MaxNumberOfMatches = 3;
 
-        [Inject] private MatchView _matchViewPrefab;
+        [Inject] private MatchView.Factory _matchViewFactory;
         
         private readonly List<MatchView> _matches = new();
 
@@ -19,7 +19,8 @@ namespace MVP.Views.Content.Matches
             
             for (var i = 0; i < Mathf.Min(matches.Count, MaxNumberOfMatches); ++i)
             {
-                var match = Instantiate(_matchViewPrefab, transform);
+                var match = _matchViewFactory.Create();
+                match.transform.SetParent(transform);
                 match.SetHeader(matches[i].Header);
                 match.SetDetails(matches[i].Details);
                 _matches.Add(match);

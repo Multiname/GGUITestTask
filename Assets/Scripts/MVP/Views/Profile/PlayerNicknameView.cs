@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace MVP.Views
+namespace MVP.Views.Profile
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class PlayerNicknameView : MonoBehaviour

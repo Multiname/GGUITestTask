@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVP.Views
+namespace MVP.Views.Profile
 {
     [RequireComponent(typeof(Image))]
     public class PlayerAvatarView : MonoBehaviour

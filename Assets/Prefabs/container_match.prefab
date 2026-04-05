@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 5602635430675283378}
   - component: {fileID: 8544140483354323334}
   - component: {fileID: 8948284637789373485}
+  - component: {fileID: 946180778658113521}
   m_Layer: 5
   m_Name: container_match
   m_TagString: Untagged
@@ -153,6 +154,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &946180778658113521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501206020167957214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5297dcfd71739d4cb9d32915cf1a023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MVP.Views.Content.Matches.MatchView
+  header: {fileID: 4316286163052550721}
+  details: {fileID: 7190118395687375288}
 --- !u!1 &7380956265675228253
 GameObject:
   m_ObjectHideFlags: 0

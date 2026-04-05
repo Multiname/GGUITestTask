@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVP.Views
+namespace MVP.Views.Content
 {
     public class ContentView : MonoBehaviour
     {

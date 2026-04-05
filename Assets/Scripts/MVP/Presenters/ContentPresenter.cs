@@ -1,5 +1,5 @@
 ﻿using System;
-using MVP.Views;
+using MVP.Views.Content;
 using MVP.Views.ContentToggle;
 using Zenject;
 

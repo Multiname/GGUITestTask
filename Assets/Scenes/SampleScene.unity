@@ -2225,6 +2225,7 @@ MonoBehaviour:
   statViewPrefab: {fileID: 7196783897002200635, guid: 1be6a35a410cc7a4eb4ea87d38af2188, type: 3}
   achievementViewPrefab: {fileID: 482240491617156985, guid: 323ad6c7ce58dce48bbdf4bc6ca7066f, type: 3}
   achievementsRowViewPrefab: {fileID: 8329057759620415916, guid: 5bbb305fd5b71f84d96ba3a9309d2367, type: 3}
+  profileDataSource: {fileID: 11400000, guid: 5da14e779fe0a6742895fcb5a043db05, type: 2}
 --- !u!4 &1216947153
 Transform:
   m_ObjectHideFlags: 0

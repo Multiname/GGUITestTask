@@ -1,3 +1,4 @@
+using ExternalSource;
 using MVP.Models;
 using MVP.Presenters;
 using MVP.Views.Content;
@@ -34,12 +35,18 @@ namespace Services
         [SerializeField] private AchievementView achievementViewPrefab;
         [SerializeField] private AchievementsRowView achievementsRowViewPrefab;
         
+        // ExternalSources
+        [SerializeField] private ProfileDataSource profileDataSource;
+        
         public override void InstallBindings()
         {
             // Services
             Container.Bind<AvatarService>().AsSingle();
             Container.Bind<FontService>().FromInstance(fontService).AsSingle();
             Container.Bind<AchievementIconService>().AsSingle();
+            
+            // ExternalSources
+            Container.BindInterfacesAndSelfTo<ProfileDataSource>().FromInstance(profileDataSource).AsSingle();
             
             // Prefabs
             Container.BindFactory<MatchView, MatchView.Factory>().FromComponentInNewPrefab(matchViewPrefab);
@@ -48,7 +55,7 @@ namespace Services
             Container.BindFactory<AchievementsRowView, AchievementsRowView.Factory>().FromComponentInNewPrefab(achievementsRowViewPrefab);
             
             // Models
-            Container.Bind<ProfileModel>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ProfileModel>().AsSingle();
             Container.Bind<MatchHistoryModel>().AsSingle();
             Container.Bind<StatsModel>().AsSingle();
             Container.Bind<AchievementsModel>().AsSingle();

@@ -2,6 +2,7 @@ using MVP.Models;
 using MVP.Presenters;
 using MVP.Views.Content;
 using MVP.Views.Content.Matches;
+using MVP.Views.Content.Stats;
 using MVP.Views.ContentToggle;
 using MVP.Views.Profile;
 using UnityEngine;
@@ -20,12 +21,14 @@ namespace Services
         [SerializeField] private ContentView contentView;
         
         [SerializeField] private MatchLayoutView matchLayoutView;
+        [SerializeField] private StatsLayoutView statsLayoutView;
         
         // Services
         [SerializeField] private FontService fontService;
 
         // Prefabs
         [SerializeField] private MatchView matchViewPrefab;
+        [SerializeField] private StatView statViewPrefab;
         
         public override void InstallBindings()
         {
@@ -35,10 +38,12 @@ namespace Services
             
             // Prefabs
             Container.Bind<MatchView>().FromInstance(matchViewPrefab).AsTransient();
+            Container.Bind<StatView>().FromInstance(statViewPrefab).AsTransient();
             
             // Models
             Container.Bind<ProfileModel>().AsSingle();
             Container.Bind<MatchHistoryModel>().AsSingle();
+            Container.Bind<StatsModel>().AsSingle();
             
             // Views
             Container.Bind<PlayerAvatarView>().FromInstance(playerAvatarView).AsSingle();
@@ -49,11 +54,13 @@ namespace Services
             Container.Bind<ContentView>().FromInstance(contentView).AsSingle();
             
             Container.Bind<MatchLayoutView>().FromInstance(matchLayoutView).AsSingle();
+            Container.Bind<StatsLayoutView>().FromInstance(statsLayoutView).AsSingle();
             
             // Presenters
             Container.BindInterfacesAndSelfTo<ProfilePresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<ContentPresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<MatchHistoryPresenter>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StatsPresenter>().AsSingle();
         }
     }
 }

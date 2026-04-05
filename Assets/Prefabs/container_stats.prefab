@@ -283,6 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7288891941709221758}
+  - component: {fileID: 7196783897002200635}
   m_Layer: 5
   m_Name: container_stats
   m_TagString: Untagged
@@ -312,6 +313,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7196783897002200635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477894426332905341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad428fda5a42445088db29c6c2ae42e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MVP.Views.Content.Stats.StatView
+  header: {fileID: 4630848859029230541}
+  subheader: {fileID: 8645875555929630289}
+  points: {fileID: 712945745466901797}
 --- !u!1 &7838590850576504388
 GameObject:
   m_ObjectHideFlags: 0

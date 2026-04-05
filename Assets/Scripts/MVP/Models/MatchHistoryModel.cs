@@ -15,12 +15,6 @@ namespace MVP.Models
         [Inject]
         private MatchHistoryModel()
         {
-            var match = new Match()
-            {
-                Header = "UNRANKED",
-                Details = "BATTLE"
-            };
-
             _matches = new List<Match>
             {
                 new()

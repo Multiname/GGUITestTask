@@ -13,7 +13,7 @@ namespace MVP.Views.Content.Matches
         
         private readonly List<MatchView> _matches = new();
 
-        public void LoadRecentMatches(List<Match> matches)
+        public void SetRecentMatches(List<Match> matches)
         {
             Clear();
             

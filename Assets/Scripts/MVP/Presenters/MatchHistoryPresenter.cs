@@ -31,6 +31,6 @@ namespace MVP.Presenters
             _model.OnMatchesChanged -= LoadMatches;
         }
         
-        private void LoadMatches() => _matchLayoutView.LoadRecentMatches(_model.GetRecentMatches(MatchLayoutView.MaxNumberOfMatches));
+        private void LoadMatches() => _matchLayoutView.SetRecentMatches(_model.GetRecentMatches(MatchLayoutView.MaxNumberOfMatches));
     }
 }

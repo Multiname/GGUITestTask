@@ -19,9 +19,9 @@ namespace MVP.Views.Content.Stats
             {
                 var statView = _statViewFactory.Create();
                 statView.transform.SetParent(transform);
-                statView.SetHeader(stat.Header);
-                statView.SetSubheader(stat.Subheader);
-                statView.SetPoints(stat.Points);
+                statView.SetHeader(stat.header);
+                statView.SetSubheader(stat.subheader);
+                statView.SetPoints(stat.points);
                 _statViews.Add(statView);
             }
         }

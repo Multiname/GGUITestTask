@@ -1,9 +1,12 @@
-﻿namespace Entities
+﻿using System;
+
+namespace Entities
 {
+    [Serializable]
     public class Stat
     {
-        public string Header;
-        public string Subheader;
-        public int Points;
+        public string header;
+        public string subheader;
+        public int points;
     }
 }

@@ -3,7 +3,7 @@ using System.Linq;
 using Entities;
 using UnityEngine;
 
-namespace ExternalSource
+namespace ExternalSource.ListDataSources
 {
     [CreateAssetMenu(fileName = "StatsDataSource", menuName = "Scriptable Objects/DataSources/StatsDataSource")]
     public class StatsDataSource : ListDataSourceBase<Stat>

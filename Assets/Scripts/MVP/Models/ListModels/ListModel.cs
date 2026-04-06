@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ExternalSource;
+using ExternalSource.ListDataSources;
 using Zenject;
 
-namespace MVP.Models
+namespace MVP.Models.ListModels
 {
     public class ListModel<T> : IDisposable, IInitializable
     {
@@ -36,7 +36,9 @@ namespace MVP.Models
         private void SetList(List<T> list)
         {
             List = list;
-            OnChanged?.Invoke();
+            InvokeOnChanged();
         }
+        
+        protected void InvokeOnChanged() => OnChanged?.Invoke();
     }
 }

@@ -1,11 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
 using Entities;
-using MVP.Models;
+using MVP.Models.ListModels;
 using MVP.Views.Content.Achievements;
-using Services;
+using Services.SpriteServices;
 using Zenject;
 
-namespace MVP.Presenters
+namespace MVP.Presenters.ListPresenters
 {
     public class AchievementsPresenter : ListPresenterBase<Achievement>
     {

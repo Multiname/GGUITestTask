@@ -1,8 +1,8 @@
 ﻿using Entities;
-using ExternalSource;
+using ExternalSource.ListDataSources;
 using Zenject;
 
-namespace MVP.Models
+namespace MVP.Models.ListModels
 {
     public class AchievementsModel : ListModel<Achievement>
     {

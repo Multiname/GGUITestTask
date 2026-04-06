@@ -1,9 +1,9 @@
 ﻿using Entities;
-using MVP.Models;
+using MVP.Models.ListModels;
 using MVP.Views.Content.Matches;
 using Zenject;
 
-namespace MVP.Presenters
+namespace MVP.Presenters.ListPresenters
 {
     public class MatchHistoryPresenter : ListPresenterBase<Match>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using MVP.Models;
+using MVP.Models.ListModels;
 using Zenject;
 
-namespace MVP.Presenters
+namespace MVP.Presenters.ListPresenters
 {
     public abstract class ListPresenterBase<T> : IDisposable, IInitializable
     {
@@ -13,13 +13,13 @@ namespace MVP.Presenters
             Model = model;
         }
         
-        public void Initialize()
+        public virtual void Initialize()
         {
             LoadList();
             Model.OnChanged += LoadList;
         }
         
-        public void Dispose()
+        public virtual void Dispose()
         {
             Model.OnChanged -= LoadList;
         }

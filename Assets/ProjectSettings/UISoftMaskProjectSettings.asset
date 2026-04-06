@@ -25,6 +25,11 @@ ShaderVariantCollection:
       variants:
       - keywords: SOFTMASKABLE
         passType: 0
+  - first: {fileID: 4800000, guid: e94e1f7424a0a43ac8b7ed672319bb4b, type: 3}
+    second:
+      variants:
+      - keywords: SOFTMASKABLE
+        passType: 0
   - first: {fileID: -6465566751694194690, guid: 5ed476c57b29ee942842d226348b93a2, type: 3}
     second:
       variants:

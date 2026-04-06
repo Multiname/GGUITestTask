@@ -324,7 +324,6 @@ MonoBehaviour:
   contentHeader: {fileID: 246192528}
   overviewScrollView: {fileID: 1660577112}
   achievementsScrollView: {fileID: 890065031}
-  scrollbar: {fileID: 1876014987}
   overviewTransitionMask: {fileID: 239762717}
   achievementsTransitionMask: {fileID: 647152864}
 --- !u!1 &178877071

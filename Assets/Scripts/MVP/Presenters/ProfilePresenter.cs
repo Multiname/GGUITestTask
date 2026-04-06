@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using MVP.Models;
 using MVP.Views.Profile;
-using Services;
+using Services.SpriteServices;
 using Zenject;
 
 namespace MVP.Presenters

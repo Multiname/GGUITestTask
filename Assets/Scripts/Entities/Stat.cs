@@ -7,6 +7,6 @@ namespace Entities
     {
         public string header;
         public string subheader;
-        public int points;
+        public long points;
     }
 }

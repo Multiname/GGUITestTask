@@ -1,4 +1,4 @@
-namespace Services
+namespace Services.SpriteServices
 {
     public class AvatarService : SpriteServiceBase
     {

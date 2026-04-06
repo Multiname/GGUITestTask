@@ -1,9 +1,9 @@
 ﻿using Entities;
-using MVP.Models;
+using MVP.Models.ListModels;
 using MVP.Views.Content.Stats;
 using Zenject;
 
-namespace MVP.Presenters
+namespace MVP.Presenters.ListPresenters
 {
     public class StatsPresenter : ListPresenterBase<Stat>
     {
@@ -16,6 +16,20 @@ namespace MVP.Presenters
         ) : base(model)
         {
             _statsLayoutView = statsLayoutView;
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            _statsLayoutView.OnStatPointsChanged += ((StatsModel)Model).UpdateStatPoints;
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            
+            _statsLayoutView.OnStatPointsChanged -= ((StatsModel)Model).UpdateStatPoints;
         }
         
         protected override void LoadList() => _statsLayoutView.SetStats(Model.GetList());

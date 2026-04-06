@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ExternalSource
+namespace ExternalSource.ListDataSources
 {
     public abstract class ListDataSourceBase<T> : ScriptableObject
     {

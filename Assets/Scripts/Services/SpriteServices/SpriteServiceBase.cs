@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace Services
+namespace Services.SpriteServices
 {
     public abstract class SpriteServiceBase
     {

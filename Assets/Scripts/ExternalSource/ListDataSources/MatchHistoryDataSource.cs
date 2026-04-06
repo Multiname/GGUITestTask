@@ -3,7 +3,7 @@ using System.Linq;
 using Entities;
 using UnityEngine;
 
-namespace ExternalSource
+namespace ExternalSource.ListDataSources
 {
     [CreateAssetMenu(fileName = "MatchHistoryDataSource", menuName = "Scriptable Objects/DataSources/MatchHistoryDataSource")]
     public class MatchHistoryDataSource : ListDataSourceBase<Match>

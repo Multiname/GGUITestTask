@@ -1,8 +1,11 @@
-﻿namespace Entities
+﻿using System;
+
+namespace Entities
 {
+    [Serializable]
     public class Match
     {
-        public string Header;
-        public string Details;
+        public string header;
+        public string details;
     }
 }

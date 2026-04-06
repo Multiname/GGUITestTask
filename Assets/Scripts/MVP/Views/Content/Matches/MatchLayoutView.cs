@@ -21,8 +21,8 @@ namespace MVP.Views.Content.Matches
             {
                 var match = _matchViewFactory.Create();
                 match.transform.SetParent(transform);
-                match.SetHeader(matches[i].Header);
-                match.SetDetails(matches[i].Details);
+                match.SetHeader(matches[i].header);
+                match.SetDetails(matches[i].details);
                 _matches.Add(match);
             }
         }

@@ -4,7 +4,7 @@ using Zenject;
 
 namespace ExternalSource
 {
-    [CreateAssetMenu(fileName = "ProfileDataSource", menuName = "Scriptable Objects/ProfileDataSource")]
+    [CreateAssetMenu(fileName = "ProfileDataSource", menuName = "Scriptable Objects/DataSources/ProfileDataSource")]
     public class ProfileDataSource : ScriptableObject, IInitializable
     {
         [SerializeField] private int avatarId;
@@ -34,7 +34,8 @@ namespace ExternalSource
             _cachedTargetProgress = targetProgress;
         }
 
-        private void OnValidate()
+        [ContextMenu("Apply Changes In Runtime")]
+        private void ApplyChanges()
         {
             if (!Application.isPlaying) return;
 

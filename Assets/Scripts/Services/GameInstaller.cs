@@ -14,7 +14,7 @@ namespace Services
 {
     public class GameInstaller : MonoInstaller
     {
-        // Views
+        [Header("Views")]
         [SerializeField] private PlayerAvatarView playerAvatarView;
         [SerializeField] private PlayerNicknameView playerNicknameView;
         [SerializeField] private PlayerProgressView playerProgressView;
@@ -26,17 +26,18 @@ namespace Services
         [SerializeField] private StatsLayoutView statsLayoutView;
         [SerializeField] private AchievementsLayoutView achievementsLayoutView;
         
-        // Services
+        [Header("Services")]
         [SerializeField] private FontService fontService;
 
-        // Prefabs
+        [Header("Prefabs")]
         [SerializeField] private MatchView matchViewPrefab;
         [SerializeField] private StatView statViewPrefab;
         [SerializeField] private AchievementView achievementViewPrefab;
         [SerializeField] private AchievementsRowView achievementsRowViewPrefab;
         
-        // ExternalSources
+        [Header("ExternalSources")]
         [SerializeField] private ProfileDataSource profileDataSource;
+        [SerializeField] private MatchHistoryDataSource matchHistoryDataSource;
         
         public override void InstallBindings()
         {
@@ -47,6 +48,7 @@ namespace Services
             
             // ExternalSources
             Container.BindInterfacesAndSelfTo<ProfileDataSource>().FromInstance(profileDataSource).AsSingle();
+            Container.Bind<MatchHistoryDataSource>().FromInstance(matchHistoryDataSource).AsSingle();
             
             // Prefabs
             Container.BindFactory<MatchView, MatchView.Factory>().FromComponentInNewPrefab(matchViewPrefab);
@@ -56,7 +58,7 @@ namespace Services
             
             // Models
             Container.BindInterfacesAndSelfTo<ProfileModel>().AsSingle();
-            Container.Bind<MatchHistoryModel>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MatchHistoryModel>().AsSingle();
             Container.Bind<StatsModel>().AsSingle();
             Container.Bind<AchievementsModel>().AsSingle();
             

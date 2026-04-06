@@ -2,54 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using Entities;
+using ExternalSource;
 using Zenject;
 
 namespace MVP.Models
 {
-    public class MatchHistoryModel
+    public class MatchHistoryModel : IDisposable, IInitializable
     {
-        private readonly List<Match> _matches;
+        private readonly MatchHistoryDataSource _dataSource;
+        
+        private List<Match> _matches;
 
         public event Action OnMatchesChanged;
 
-        [Inject]
-        private MatchHistoryModel()
-        {
-            _matches = new List<Match>
-            {
-                new()
-                {
-                    Header = "UNRANKED",
-                    Details = "BATTLE 1"
-                },
-                new()
-                {
-                    Header = "UNRANKED",
-                    Details = "BATTLE 2"
-                },
-                new()
-                {
-                    Header = "UNRANKED",
-                    Details = "BATTLE 3"
-                },
-                new()
-                {
-                    Header = "UNRANKED",
-                    Details = "BATTLE 4"
-                },
-                new()
-                {
-                    Header = "UNRANKED",
-                    Details = "BATTLE 5"
-                },
-            };
-        }
-
         public List<Match> GetRecentMatches(int limit) => _matches.TakeLast(limit).Reverse().ToList();
 
-        public void AddMatch(Match match)
+        [Inject]
+        public MatchHistoryModel(MatchHistoryDataSource dataSource)
         {
-            _matches.Add(match);
+            _dataSource = dataSource;
+        }
+        
+        public void Initialize()
+        {
+            _matches = _dataSource.GetMatches();
+            _dataSource.OnChange += SetMatches;
+        }
+        
+        public void Dispose()
+        {
+            _dataSource.OnChange -= SetMatches;
+        }
+
+        private void SetMatches(List<Match> matches)
+        {
+            _matches = matches;
             OnMatchesChanged?.Invoke();
         }
     }

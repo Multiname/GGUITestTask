@@ -1490,7 +1490,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2274,6 +2274,7 @@ MonoBehaviour:
   matchHistoryDataSource: {fileID: 11400000, guid: 33964d556e6a3ed4da6dc8104d814d18, type: 2}
   statsDataSource: {fileID: 11400000, guid: 947cc3f2ee9e84e4580fae8e44b7e385, type: 2}
   achievementsDataSource: {fileID: 11400000, guid: f1a557c1cbd7240429b6d34ec8bd3527, type: 2}
+  uiEffectsConfig: {fileID: 11400000, guid: 9d090aa73893d3446b5e697c11c1ec39, type: 2}
 --- !u!4 &1216947153
 Transform:
   m_ObjectHideFlags: 0
@@ -2348,7 +2349,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

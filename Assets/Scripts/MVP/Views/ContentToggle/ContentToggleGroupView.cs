@@ -10,7 +10,12 @@ namespace MVP.Views.ContentToggle
         
         public event Action OnOverviewClick;
         public event Action OnAchievementsClick;
-        
+
+        public void Start()
+        {
+            overviewToggle.SetSelected(true);
+        }
+
         public void OnEnable()
         {
             overviewToggle.OnClick += HandleOverviewToggleClick;

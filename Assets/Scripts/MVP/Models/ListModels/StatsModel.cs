@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using System.Collections.Generic;
+using Entities;
 using ExternalSource.ListDataSources;
 using Zenject;
 
@@ -9,9 +10,13 @@ namespace MVP.Models.ListModels
         [Inject]
         public StatsModel(StatsDataSource dataSource) : base(dataSource) {}
         
-        public void UpdateStatPoints(int index, long points)
+        public void UpdateStatPoints(Dictionary<int, long> editedPoints)
         {
-            List[index].points = points;
+            foreach (var (index, points) in editedPoints)
+            {
+                List[index].points = points;
+            }
+
             InvokeOnChanged();
         }
     }

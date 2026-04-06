@@ -2905,6 +2905,7 @@ MonoBehaviour:
   matchLayoutView: {fileID: 1570560355}
   statsLayoutView: {fileID: 1481430182}
   achievementsLayoutView: {fileID: 1631987630}
+  saveStatsButtonView: {fileID: 1267338749}
   fontService: {fileID: 11400000, guid: 1ce83cac3c48f444eb079f45e50ede71, type: 2}
   matchViewPrefab: {fileID: 946180778658113521, guid: 480caaebc4b859c40b13aec293bf8993, type: 3}
   statViewPrefab: {fileID: 7196783897002200635, guid: 1be6a35a410cc7a4eb4ea87d38af2188, type: 3}
@@ -3088,6 +3089,7 @@ GameObject:
   - component: {fileID: 1267338748}
   - component: {fileID: 1267338747}
   - component: {fileID: 1267338746}
+  - component: {fileID: 1267338749}
   m_Layer: 5
   m_Name: button_save
   m_TagString: Untagged
@@ -3137,10 +3139,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    m_PressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_SelectedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3154,7 +3156,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1267338747}
   m_OnClick:
     m_PersistentCalls:
@@ -3197,6 +3199,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267338744}
   m_CullTransparentMesh: 1
+--- !u!114 &1267338749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267338744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991eff68f89b43e18c8b8be6bfc652b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MVP.Views.Content.Stats.SaveStatsButtonView
+  activeButtonSprite: {fileID: 21300000, guid: d60072c1eabc3f448ae6820cc83b94a3, type: 3}
+  inactiveButtonSprite: {fileID: 21300000, guid: 3ab532ba37d7cdb4aae6e9f19103a1b4, type: 3}
 --- !u!1 &1348768796
 GameObject:
   m_ObjectHideFlags: 0

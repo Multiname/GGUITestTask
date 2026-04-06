@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Services;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -14,7 +15,11 @@ namespace MVP.Views.Content.Stats
         [SerializeField] private TextMeshProUGUI subheader;
         [SerializeField] private TMP_InputField points;
 
+        [Inject] private FontService _fontService;
+
         public Action<long> PointsChangedCallback { private get; set; }
+
+        private string _cachedPointsText;
 
         private NumberFormatInfo _pointsFormat;
         
@@ -41,7 +46,12 @@ namespace MVP.Views.Content.Stats
 
         public void SetHeader(string text) =>  header.text = text.ToUpper();
         public void SetSubheader(string text) =>  subheader.text = text.ToUpper();
-        public void SetPoints(long number) => points.text = ConvertPointsLongToString(number);
+
+        public void SetPoints(long number)
+        {
+            _cachedPointsText = ConvertPointsLongToString(number);
+            points.text = _cachedPointsText;
+        }
 
         private void HandleValueChanged(string value)
         {
@@ -60,17 +70,23 @@ namespace MVP.Views.Content.Stats
             }
             
             var newPoints = long.Parse(rawPoints);
-            
-            SetPoints(newPoints);
+
+            points.text = ConvertPointsLongToString(newPoints);
         }
 
         private void HandleEndEdit(string value)
         {
+            if (value == _cachedPointsText) return;
+            _cachedPointsText = value;
+            
             var newPoints = long.Parse(Regex.Replace(value, "[^0-9]", ""));
             PointsChangedCallback?.Invoke(newPoints);
         }
         
         private string ConvertPointsLongToString(long number) => number.ToString("N", _pointsFormat) + " PT.";
+        
+        public void SetRedColor() => points.textComponent.color = _fontService.Red;
+        public void SetBrightColor() => points.textComponent.color = _fontService.Bright;
         
         public class Factory : PlaceholderFactory<StatView> {}
     }

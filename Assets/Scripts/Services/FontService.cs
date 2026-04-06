@@ -12,5 +12,6 @@ namespace Services
         [field: SerializeField] public Color Bright { get; private set; }
         [field: SerializeField] public Color Grey { get; private set; }
         [field: SerializeField] public Color Dark { get; private set; }
+        [field: SerializeField] public Color Red { get; private set; }
     }
 }

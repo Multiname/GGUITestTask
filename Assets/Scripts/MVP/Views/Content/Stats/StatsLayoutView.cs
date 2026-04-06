@@ -12,7 +12,11 @@ namespace MVP.Views.Content.Stats
         
         private readonly List<StatView>  _statViews = new();
         
-        public event Action<int, long> OnStatPointsChanged;
+        private readonly HashSet<StatView> _editedStats = new();
+        
+        public Dictionary<int, long> EditedPoints { get; } = new();
+        
+        public event Action OnStatPointsChanged;
 
         public void SetStats(List<Stat> stats)
         {
@@ -28,7 +32,7 @@ namespace MVP.Views.Content.Stats
                 statView.SetPoints(stats[i].points);
                 
                 var index = i;
-                statView.PointsChangedCallback = (points) => OnStatPointsChanged?.Invoke(index, points);
+                statView.PointsChangedCallback = points => HandleStatViewPointsChanged(statView, index, points);
                 
                 _statViews.Add(statView);
             }
@@ -41,6 +45,27 @@ namespace MVP.Views.Content.Stats
                 Destroy(stat.gameObject);
             }
             _statViews.Clear();
+        }
+
+        private void HandleStatViewPointsChanged(StatView view, int index, long points)
+        {
+            view.SetRedColor();
+            
+            _editedStats.Add(view);
+            EditedPoints[index] = points;
+            
+            OnStatPointsChanged?.Invoke();
+        }
+
+        public void ConfirmEdit()
+        {
+            foreach (var stat in _editedStats)
+            {
+                stat.SetBrightColor();
+            }
+            
+            _editedStats.Clear();
+            EditedPoints.Clear();
         }
     }
 }

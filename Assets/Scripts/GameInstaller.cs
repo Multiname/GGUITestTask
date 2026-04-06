@@ -29,6 +29,8 @@ public class GameInstaller : MonoInstaller
     [SerializeField] private MatchLayoutView matchLayoutView;
     [SerializeField] private StatsLayoutView statsLayoutView;
     [SerializeField] private AchievementsLayoutView achievementsLayoutView;
+    
+    [SerializeField] private SaveStatsButtonView saveStatsButtonView;
         
     [Header("Services")]
     [SerializeField] private FontService fontService;
@@ -87,6 +89,8 @@ public class GameInstaller : MonoInstaller
         Container.Bind<MatchLayoutView>().FromInstance(matchLayoutView).AsSingle();
         Container.Bind<StatsLayoutView>().FromInstance(statsLayoutView).AsSingle();
         Container.Bind<AchievementsLayoutView>().FromInstance(achievementsLayoutView).AsSingle();
+        
+        Container.Bind<SaveStatsButtonView>().FromInstance(saveStatsButtonView).AsSingle();
             
         // Presenters
         Container.BindInterfacesAndSelfTo<ProfilePresenter>().AsSingle();

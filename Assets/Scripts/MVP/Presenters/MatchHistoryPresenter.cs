@@ -1,36 +1,23 @@
-﻿using System;
+﻿using Entities;
 using MVP.Models;
 using MVP.Views.Content.Matches;
 using Zenject;
 
 namespace MVP.Presenters
 {
-    public class MatchHistoryPresenter : IDisposable, IInitializable
+    public class MatchHistoryPresenter : ListPresenterBase<Match>
     {
-        private readonly MatchHistoryModel _model;
         private readonly MatchLayoutView _matchLayoutView;
 
         [Inject]
         public MatchHistoryPresenter(
             MatchHistoryModel model,
             MatchLayoutView matchLayoutView
-        )
+        ) : base(model)
         {
-            _model = model;
             _matchLayoutView = matchLayoutView;
         }
-
-        public void Initialize()
-        {
-            LoadMatches();
-            _model.OnMatchesChanged += LoadMatches;
-        }
-
-        public void Dispose()
-        {
-            _model.OnMatchesChanged -= LoadMatches;
-        }
         
-        private void LoadMatches() => _matchLayoutView.SetRecentMatches(_model.GetRecentMatches(MatchLayoutView.MaxNumberOfMatches));
+        protected override void LoadList() => _matchLayoutView.SetRecentMatches((Model as MatchHistoryModel)?.GetRecentMatches(MatchLayoutView.MaxNumberOfMatches));
     }
 }

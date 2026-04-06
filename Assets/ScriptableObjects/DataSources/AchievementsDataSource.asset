@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff836352a3c464ca43ced963b27503c, type: 3}
+  m_Name: AchievementsDataSource
+  m_EditorClassIdentifier: Assembly-CSharp::ExternalSource.AchievementsDataSource
+  achievements:
+  - iconId: 0
+    header: EMPIRE WILL RISE
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 1
+    header: MASTERY
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 2
+    header: BLOOD MASTER
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 0
+    header: EMPIRE WILL RISE
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 1
+    header: MASTERY
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 2
+    header: BLOOD MASTER
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 0
+    header: EMPIRE WILL RISE
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 1
+    header: MASTERY
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 2
+    header: BLOOD MASTER
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 0
+    header: EMPIRE WILL RISE
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 1
+    header: MASTERY
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 2
+    header: BLOOD MASTER
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 0
+    header: EMPIRE WILL RISE
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 1
+    header: MASTERY
+    date:
+      day: 20
+      month: 11
+      year: 2021
+  - iconId: 2
+    header: BLOOD MASTER
+    date:
+      day: 20
+      month: 11
+      year: 2021

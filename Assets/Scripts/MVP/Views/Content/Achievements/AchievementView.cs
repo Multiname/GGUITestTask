@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using Entities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +16,7 @@ namespace MVP.Views.Content.Achievements
         
         public void SetHeader(string text) => header.text = text.ToUpper();
         
-        public void SetDate(DateTime date) => dateText.text = date.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+        public void SetDate(Achievement.Date date) => dateText.text = $"{date.day}/{date.month}/{date.year}";
         
         public class Factory : PlaceholderFactory<AchievementView> {}
     }

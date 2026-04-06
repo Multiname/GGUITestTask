@@ -20,8 +20,8 @@ namespace MVP.Views.Content.Achievements
             var achievement = _achievementViewFactory.Create();
             achievement.transform.SetParent(transform);
             achievement.SetIcon(achievementData.Icon);
-            achievement.SetHeader(achievementData.Header);
-            achievement.SetDate(achievementData.Date);
+            achievement.SetHeader(achievementData.header);
+            achievement.SetDate(achievementData.date);
             _achievements.Add(achievement);
         }
 

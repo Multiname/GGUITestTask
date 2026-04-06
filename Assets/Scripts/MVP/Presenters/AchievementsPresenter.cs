@@ -1,5 +1,4 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Entities;
 using MVP.Models;
 using MVP.Views.Content.Achievements;
@@ -8,9 +7,8 @@ using Zenject;
 
 namespace MVP.Presenters
 {
-    public class AchievementsPresenter : IDisposable, IInitializable
+    public class AchievementsPresenter : ListPresenterBase<Achievement>
     {
-        private readonly AchievementsModel _model;
         private readonly AchievementsLayoutView _achievementsLayoutView;
         
         private readonly AchievementIconService _achievementIconService;
@@ -20,30 +18,18 @@ namespace MVP.Presenters
             AchievementsModel model,
             AchievementsLayoutView achievementsLayoutView,
             AchievementIconService achievementIconService
-        )
+        ) : base(model)
         {
-            _model = model;
             _achievementsLayoutView = achievementsLayoutView;
             _achievementIconService = achievementIconService;
         }
-
-        public void Initialize()
-        {
-            LoadAchievements();
-            _model.OnAchievementsChanged += LoadAchievements;
-        }
-
-        public void Dispose()
-        {
-            _model.OnAchievementsChanged -= LoadAchievements;
-        }
-
-        private void LoadAchievements() => LoadAchievementsAsync().Forget();
-
+        
+        protected override void LoadList() => LoadAchievementsAsync().Forget();
+        
         private async UniTask LoadAchievementsAsync()
         {
-            var achievements = _model.GetAchievements();
-
+            var achievements = Model.GetList();
+        
             foreach (var achievement in achievements)
             {
                 await LoadAchievementIconsAsync(achievement);
@@ -51,11 +37,10 @@ namespace MVP.Presenters
             
             _achievementsLayoutView.SetAchievements(achievements);
         }
-
+        
         private async UniTask LoadAchievementIconsAsync(Achievement achievement)
         {
-            if (achievement.Icon != null) return;
-            achievement.Icon = await _achievementIconService.GetSprite(achievement.IconId);
+            achievement.Icon = await _achievementIconService.GetSprite(achievement.iconId);
         }
     }
 }

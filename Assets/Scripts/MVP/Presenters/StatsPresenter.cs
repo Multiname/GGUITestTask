@@ -1,36 +1,23 @@
-﻿using System;
+﻿using Entities;
 using MVP.Models;
 using MVP.Views.Content.Stats;
 using Zenject;
 
 namespace MVP.Presenters
 {
-    public class StatsPresenter : IDisposable, IInitializable
+    public class StatsPresenter : ListPresenterBase<Stat>
     {
-        private readonly StatsModel _model;
         private readonly StatsLayoutView _statsLayoutView;
 
         [Inject]
         public StatsPresenter(
             StatsModel model,
             StatsLayoutView statsLayoutView
-        )
+        ) : base(model)
         {
-            _model = model;
             _statsLayoutView = statsLayoutView;
         }
         
-        public void Initialize()
-        {
-            LoadStats();
-            _model.OnStatsChanged += LoadStats;
-        }
-        
-        public void Dispose()
-        {
-            _model.OnStatsChanged -= LoadStats;
-        }
-
-        private void LoadStats() => _statsLayoutView.SetStats(_model.GetStats());
+        protected override void LoadList() => _statsLayoutView.SetStats(Model.GetList());
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Entities;
 using ExternalSource;
@@ -7,37 +6,11 @@ using Zenject;
 
 namespace MVP.Models
 {
-    public class MatchHistoryModel : IDisposable, IInitializable
+    public class MatchHistoryModel : ListModel<Match>
     {
-        private readonly MatchHistoryDataSource _dataSource;
-        
-        private List<Match> _matches;
-
-        public event Action OnMatchesChanged;
-
-        public List<Match> GetRecentMatches(int limit) => _matches.TakeLast(limit).Reverse().ToList();
-
         [Inject]
-        public MatchHistoryModel(MatchHistoryDataSource dataSource)
-        {
-            _dataSource = dataSource;
-        }
+        public MatchHistoryModel(MatchHistoryDataSource dataSource) : base(dataSource) {}
         
-        public void Initialize()
-        {
-            _matches = _dataSource.GetMatches();
-            _dataSource.OnChange += SetMatches;
-        }
-        
-        public void Dispose()
-        {
-            _dataSource.OnChange -= SetMatches;
-        }
-
-        private void SetMatches(List<Match> matches)
-        {
-            _matches = matches;
-            OnMatchesChanged?.Invoke();
-        }
+        public List<Match> GetRecentMatches(int limit) => List.TakeLast(limit).Reverse().ToList();
     }
 }

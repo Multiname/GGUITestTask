@@ -3,11 +3,18 @@ using UnityEngine;
 
 namespace Entities
 {
+    [Serializable]
     public class Achievement
     {
-        public int IconId;
-        public Sprite Icon = null;
-        public string Header;
-        public DateTime Date;
+        public int iconId;
+        [NonSerialized] public Sprite Icon = null;
+        public string header;
+        public Date date;
+        
+        [Serializable]
+        public struct Date
+        {
+            public int day, month, year;
+        }
     }
 }

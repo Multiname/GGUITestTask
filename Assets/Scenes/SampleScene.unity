@@ -2228,6 +2228,7 @@ MonoBehaviour:
   profileDataSource: {fileID: 11400000, guid: 5da14e779fe0a6742895fcb5a043db05, type: 2}
   matchHistoryDataSource: {fileID: 11400000, guid: 33964d556e6a3ed4da6dc8104d814d18, type: 2}
   statsDataSource: {fileID: 11400000, guid: 947cc3f2ee9e84e4580fae8e44b7e385, type: 2}
+  achievementsDataSource: {fileID: 11400000, guid: f1a557c1cbd7240429b6d34ec8bd3527, type: 2}
 --- !u!4 &1216947153
 Transform:
   m_ObjectHideFlags: 0

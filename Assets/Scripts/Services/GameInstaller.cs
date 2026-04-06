@@ -39,6 +39,7 @@ namespace Services
         [SerializeField] private ProfileDataSource profileDataSource;
         [SerializeField] private MatchHistoryDataSource matchHistoryDataSource;
         [SerializeField] private StatsDataSource statsDataSource;
+        [SerializeField] private AchievementsDataSource achievementsDataSource;
         
         public override void InstallBindings()
         {
@@ -51,6 +52,7 @@ namespace Services
             Container.BindInterfacesAndSelfTo<ProfileDataSource>().FromInstance(profileDataSource).AsSingle();
             Container.Bind<MatchHistoryDataSource>().FromInstance(matchHistoryDataSource).AsSingle();
             Container.Bind<StatsDataSource>().FromInstance(statsDataSource).AsSingle();
+            Container.Bind<AchievementsDataSource>().FromInstance(achievementsDataSource).AsSingle();
             
             // Prefabs
             Container.BindFactory<MatchView, MatchView.Factory>().FromComponentInNewPrefab(matchViewPrefab);
@@ -62,7 +64,7 @@ namespace Services
             Container.BindInterfacesAndSelfTo<ProfileModel>().AsSingle();
             Container.BindInterfacesAndSelfTo<MatchHistoryModel>().AsSingle();
             Container.BindInterfacesAndSelfTo<StatsModel>().AsSingle();
-            Container.Bind<AchievementsModel>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AchievementsModel>().AsSingle();
             
             // Views
             Container.Bind<PlayerAvatarView>().FromInstance(playerAvatarView).AsSingle();

@@ -55,7 +55,7 @@ namespace MVP.Presenters
         private async UniTask LoadAchievementIconsAsync(Achievement achievement)
         {
             if (achievement.Icon != null) return;
-            achievement.Icon = await _achievementIconService.GetIcon(achievement.IconId);
+            achievement.Icon = await _achievementIconService.GetSprite(achievement.IconId);
         }
     }
 }

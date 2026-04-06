@@ -61,7 +61,7 @@ namespace MVP.Presenters
 
         private async UniTask SetAvatarAsync(int id)
         {
-            var avatar = await _avatarService.GetAvatar(id);
+            var avatar = await _avatarService.GetSprite(id);
             if (avatar == null) return;
             
             _playerAvatarView.SetAvatar(avatar);

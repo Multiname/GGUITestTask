@@ -8,5 +8,6 @@ namespace Configs
         [field: SerializeField] public float ToggleSelectTransitionDuration { get; private set; } = 1.0f;
         [field: SerializeField] public float ToggleHoverMaxAlpha { get; private set; } = 0.5f;
         [field: SerializeField] public float ToggleHoverFlickerDuration { get; private set; } = 1.0f;
+        [field: SerializeField] public float ContentTransitionDuration { get; private set; } = 1.0f;
     }
 }

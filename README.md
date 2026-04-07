@@ -21,7 +21,7 @@
 - Addressables (загрузка аватарок и иконок достижений)
 - [UniTask](https://github.com/cysharp/UniTask?tab=readme-ov-file#upm-package) (в связке с Addressables)
 - [DoTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676) (анимация 2 тогглов в топ-баре, переключения вкладки в окне с информацией)
-- [SoftMaskForUGUI](https://github.com/mob-sakai/SoftMaskForUGUI?tab=readme-ov-file#install-via-upm-with-package-manager-ui) (анимация переключения вкладки)
+- [SoftMaskForUGUI](https://github.com/mob-sakai/SoftMaskForUGUI?tab=readme-ov-file#install-via-upm-with-package-manager-ui) (плавная прозрачность внизу вкладки, анимация переключения вкладки)
 
 ### Troubleshooting
 Если после импорта проекта вкладка в окне с информацией выглядит как розовый прямоугольник:
